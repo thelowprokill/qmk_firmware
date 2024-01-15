@@ -47,7 +47,15 @@ enum custom_layers {
 #define SY_GRV LT(SYMBOL, KC_GRV)
 
 #ifdef OLED_ENABLE
-  char     splash_screen[34] = "NerdBoard V6 29 Key\n\nBy: Jon Hull";
+  #ifdef VERSION
+    #if VERSION == 61
+      char splash_screen[36] = "NerdBoard V6.1 29 Key\n\nBy: Jon Hull";
+    #else 
+      char splash_screen[34] = "NerdBoard V6 29 Key\n\nBy: Jon Hull";
+    #endif
+  #else
+    char splash_screen[34] = "NerdBoard V6 29 Key\n\nBy: Jon Hull";
+  #endif
   uint32_t timer             = 0;
   uint8_t  show_splash       = 1;
   
