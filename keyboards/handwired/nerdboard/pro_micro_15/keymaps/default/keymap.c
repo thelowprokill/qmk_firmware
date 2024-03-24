@@ -7,7 +7,10 @@ enum custom_layers {
   //_SYMBOL,
   //_MOUSE,
   //_FUNC
-  _BLAKEMAK
+  _BLAKEMAK_C,
+  _BLAKEMAK_L,
+  _BLAKEMAK_R,
+  _FUNC
 };
 
 // layer keys
@@ -18,13 +21,15 @@ enum custom_layers {
 //#define SYMBOL  MO(_SYMBOL)
 //#define MOUSE   MO(_MOUSE)
 //#define T_GAME  TO(_GAME)
-//#define FUNC    MO(_FUNC)
+#define FUNC    MO(_FUNC)
+#define BM_C    MO(_BLAKEMAK_C)
+#define BM_R    MO(_BLAKEMAK_R)
 
 // alternate keys
-//#define L       KC_LEFT 
-//#define D       KC_DOWN
-//#define U       KC_UP 
-//#define R       KC_RIGHT 
+#define L       KC_LEFT
+#define D       KC_DOWN
+#define U       KC_UP
+#define R       KC_RIGHT
 //#define TERM    LCA(KC_T)
 //#define PLUS    LSFT(KC_EQL)
 //#define STAR    LSFT(KC_8)
@@ -33,10 +38,18 @@ enum custom_layers {
 
 // mod taps
 //#define CTL_ENT CTL_T(KC_ENT)
-//#define MT_A    SFT_T(KC_A)
-//#define MT_R    CTL_T(KC_R)
-//#define MT_S    ALT_T(KC_S)
-//#define MT_T    SFT_T(KC_T)
+#define MT_G    ALT_T(KC_G)
+#define MT_H    SFT_T(KC_H)
+
+#define MT_A    SFT_T(KC_A)
+#define MT_S    CTL_T(KC_S)
+#define MT_D    ALT_T(KC_D)
+#define MT_F    SFT_T(KC_F)
+
+#define MT_J    SFT_T(KC_J)
+#define MT_K    CTL_T(KC_K)
+#define MT_L    ALT_T(KC_L)
+#define MT_SI   SFT_T(KC_SCLN)
 //
 //#define MTQ_A   SFT_T(KC_A)
 //#define MTQ_S   CTL_T(KC_S)
@@ -50,12 +63,33 @@ enum custom_layers {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-  [_BLAKEMAK] = LAYOUT(
-      KC_Q,  KC_W,   KC_E,   KC_R,
-      KC_A,  KC_S,   KC_D,   KC_F,
-      KC_Z,  KC_X,   KC_C,   KC_V,
-             KC_ENT, KC_TAB, KC_SPC
-      )
+  [_BLAKEMAK_C] = LAYOUT(
+    _______, KC_T  , KC_Y  , KC_DEL,
+    _______, MT_G  , MT_H  ,KC_BSPC,
+    _______, KC_B  , KC_N  , KC_SPC,
+             FUNC  , BM_C  , BM_R
+  ),
+
+  [_BLAKEMAK_L] = LAYOUT(
+    KC_Q   , KC_W  , KC_E  , KC_R,
+    MT_A   , MT_S  , MT_D  , MT_F,
+    KC_Z   , KC_X  , KC_C  , KC_V,
+            _______,_______,_______
+  ),
+
+  [_BLAKEMAK_R] = LAYOUT(
+    KC_U   , KC_I  , KC_O  , KC_P  ,
+    MT_J   , MT_K  , MT_L  , MT_SI ,
+    KC_M   ,KC_COMM,KC_DOT ,KC_SLSH,
+            _______,_______,_______
+  ),
+
+  [_FUNC] = LAYOUT(
+    QK_BOOT,_______,_______,_______,
+    _______,_______, U     ,_______,
+    _______, L     , D     , R     ,
+            _______,_______,_______
+  ),
   // needs a KC_R, and KC_F
   //[_GAME] = LAYOUT(
   //  KC_TAB , KC_1  , KC_2  , KC_3  ,   //    KC_BTN3,_______, KC_F  , JONMAK,
