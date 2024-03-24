@@ -67,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, KC_T  , KC_Y  , KC_DEL,
     _______, MT_G  , MT_H  ,KC_BSPC,
     _______, KC_B  , KC_N  , KC_SPC,
-             FUNC  , BM_C  , BM_R
+             FUNC  , BM_L  , BM_R
   ),
 
   [_BLAKEMAK_L] = LAYOUT(
