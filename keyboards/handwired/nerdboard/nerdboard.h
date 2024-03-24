@@ -18,7 +18,9 @@
 
 #include "quantum.h"
 
-#if defined(KEYBOARD_handwired_nerdboard_pro_micro_29)
+#if defined(KEYBOARD_handwired_nerdboard_pro_micro_15)
+#    include "pro_micro_15.h"
+#elif defined(KEYBOARD_handwired_nerdboard_pro_micro_29)
 #    include "pro_micro_29.h"
 #elif defined(KEYBOARD_handwired_nerdboard_pro_micro_34)
 #    include "pro_micro_34.h"
