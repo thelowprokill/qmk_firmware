@@ -1,0 +1,34 @@
+{
+    "url": "",
+    "usb": {
+        "pid": "0x3536",
+        "device_version": "0.0.1"
+    },
+    "split": {
+        "bootmagic": {
+            "matrix": [5, 4]
+        }
+    },
+    "layouts": {
+        "LAYOUT": {
+            "layout": [
+                {"label":"L00", "x":0,  "y":0},
+                {"label":"L01", "x":1,  "y":0},
+                {"label":"L02", "x":2,  "y":0},
+                {"label":"L03", "x":3,  "y":0},
+                {"label":"L10", "x":0,  "y":1},
+                {"label":"L11", "x":1,  "y":1},
+                {"label":"L12", "x":2,  "y":1},
+                {"label":"L13", "x":3,  "y":1},
+                {"label":"L20", "x":0,  "y":2},
+                {"label":"L21", "x":1,  "y":2},
+                {"label":"L22", "x":2,  "y":2},
+                {"label":"L23", "x":3,  "y":2},
+
+                {"label":"L31", "x":1,  "y":3},
+                {"label":"L32", "x":2,  "y":3},
+                {"label":"L33", "x":3,  "y":3}
+            ]
+        }
+    }
+}
