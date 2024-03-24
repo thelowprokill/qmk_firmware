@@ -18,4 +18,4 @@ MOUSE_SHARED_EP = yes
 
 SPLIT_KEYBOARD = yes
 
-DEFAULT_FOLDER = handwired/nerdboard/pro_micro_29/arduinomicro
+DEFAULT_FOLDER = handwired/nerdboard/pro_micro_15/arduinomicro

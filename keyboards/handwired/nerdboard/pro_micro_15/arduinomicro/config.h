@@ -26,7 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #undef USE_I2C
 
-#define MASTER_RIGHT
+#define MASTER_LEFT
 #define PMW3360_LIFTOFF_DISTANCE 0x40
 
 /* PMW3360 Settings */
