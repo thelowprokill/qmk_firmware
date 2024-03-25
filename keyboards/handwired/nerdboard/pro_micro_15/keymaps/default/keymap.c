@@ -10,7 +10,8 @@ enum custom_layers {
   _BLAKEMAK_C,
   _BLAKEMAK_L,
   _BLAKEMAK_R,
-  _FUNC
+  _FUNC,
+  _MOUSE
 };
 
 // layer keys
@@ -22,14 +23,28 @@ enum custom_layers {
 //#define MOUSE   MO(_MOUSE)
 //#define T_GAME  TO(_GAME)
 #define FUNC    MO(_FUNC)
+#define BM_L    MO(_BLAKEMAK_L)
 #define BM_C    MO(_BLAKEMAK_C)
 #define BM_R    MO(_BLAKEMAK_R)
+#define T_MOUSE TO(_MOUSE)
+#define T_DEF   TO(_BLAKEMAK_C)
 
 // alternate keys
 #define L       KC_LEFT
 #define D       KC_DOWN
 #define U       KC_UP
 #define R       KC_RIGHT
+
+#define M_L     KC_MS_L
+#define M_D     KC_MS_D
+#define M_U     KC_MS_U
+#define M_R     KC_MS_R
+
+#define MW_L    KC_MS_WH_LEFT
+#define MW_D    KC_MS_WH_DOWN
+#define MW_U    KC_MS_WH_UP
+#define MW_R    KC_MS_WH_RIGHT
+
 //#define TERM    LCA(KC_T)
 //#define PLUS    LSFT(KC_EQL)
 //#define STAR    LSFT(KC_8)
@@ -64,9 +79,9 @@ enum custom_layers {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_BLAKEMAK_C] = LAYOUT(
-    _______, KC_T  , KC_Y  , KC_DEL,
-    _______, MT_G  , MT_H  ,KC_BSPC,
-    _______, KC_B  , KC_N  , KC_SPC,
+    KC_PIPE, KC_T  , KC_Y  , KC_DEL,
+    KC_LSFT, MT_G  , MT_H  ,KC_BSPC,
+    KC_BSLS, KC_B  , KC_N  , KC_SPC,
              FUNC  , BM_L  , BM_R
   ),
 
@@ -85,11 +100,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_FUNC] = LAYOUT(
-    QK_BOOT,_______,_______,_______,
-    _______,_______, U     ,_______,
-    _______, L     , D     , R     ,
+    QK_BOOT,_______,T_DEF  ,T_MOUSE,
+    _______, L     , U     , R     ,
+    _______,_______, D     ,_______,
             _______,_______,_______
   ),
+
+  [_MOUSE] = LAYOUT(
+    MW_U   , MW_L  ,KC_LSFT, MW_R  ,
+    MW_D   , M_L   , M_U   , M_R   ,
+    KC_BTN3,KC_BTN1, M_D   ,KC_BTN2,
+            FUNC   ,_______,_______
+  ),
+
   // needs a KC_R, and KC_F
   //[_GAME] = LAYOUT(
   //  KC_TAB , KC_1  , KC_2  , KC_3  ,   //    KC_BTN3,_______, KC_F  , JONMAK,
