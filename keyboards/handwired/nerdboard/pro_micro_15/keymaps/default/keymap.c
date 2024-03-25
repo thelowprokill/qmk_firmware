@@ -10,8 +10,8 @@ enum custom_layers {
   _BLAKEMAK_C,
   _BLAKEMAK_L,
   _BLAKEMAK_R,
-  _FUNC,
-  _MOUSE
+  _MOUSE,
+  _FUNC
 };
 
 // layer keys
@@ -99,18 +99,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             _______,_______,_______
   ),
 
-  [_FUNC] = LAYOUT(
-    QK_BOOT,_______,T_DEF  ,T_MOUSE,
-    _______, L     , U     , R     ,
-    _______,_______, D     ,_______,
-            _______,_______,_______
-  ),
-
   [_MOUSE] = LAYOUT(
     MW_U   , MW_L  ,KC_LSFT, MW_R  ,
     MW_D   , M_L   , M_U   , M_R   ,
     KC_BTN3,KC_BTN1, M_D   ,KC_BTN2,
             FUNC   ,_______,_______
+  ),
+
+  [_FUNC] = LAYOUT(
+    QK_BOOT,_______,T_DEF  ,T_MOUSE,
+    _______, L     , U     , R     ,
+    _______,_______, D     ,_______,
+            _______,_______,_______
   ),
 
   // needs a KC_R, and KC_F
