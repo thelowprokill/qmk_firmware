@@ -7,10 +7,12 @@ enum custom_layers {
   //_SYMBOL,
   //_MOUSE,
   //_FUNC
+  _GAME,
   _BLAKEMAK_C,
   _BLAKEMAK_L,
   _BLAKEMAK_R,
   _MOUSE,
+  _NUMBERS,
   _FUNC
 };
 
@@ -26,6 +28,8 @@ enum custom_layers {
 #define BM_L    MO(_BLAKEMAK_L)
 #define BM_C    MO(_BLAKEMAK_C)
 #define BM_R    MO(_BLAKEMAK_R)
+#define NUMBE   MO(_NUMBERS)
+#define T_GAME  TO(_GAME)
 #define T_MOUSE TO(_MOUSE)
 #define T_DEF   TO(_BLAKEMAK_C)
 
@@ -75,11 +79,19 @@ enum custom_layers {
 //#define MO_TAB LT(MOUSE, KC_TAB)
 //#define SY_GRV LT(SYMBOL, KC_GRV)
 
+void keyboard_pre_init_user(void) { layer_move(_BLAKEMAK_C); }
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
+  [_GAME] = LAYOUT(
+    KC_TAB , KC_1  , KC_2  , KC_3  ,
+    KC_LSFT, KC_A  , KC_W  , KC_D  ,
+    KC_LALT, KC_R  , KC_S  , KC_E  ,
+             FUNC  ,KC_LCTL, KC_SPC
+  ),
+
   [_BLAKEMAK_C] = LAYOUT(
-    KC_PIPE, KC_T  , KC_Y  , KC_DEL,
+    KC_ESC , KC_T  , KC_Y  , KC_DEL,
     KC_LSFT, MT_G  , MT_H  ,KC_BSPC,
     KC_BSLS, KC_B  , KC_N  , KC_SPC,
              FUNC  , BM_L  , BM_R
@@ -96,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_U   , KC_I  , KC_O  , KC_P  ,
     MT_J   , MT_K  , MT_L  , MT_SI ,
     KC_M   ,KC_COMM,KC_DOT ,KC_SLSH,
-            _______,_______,_______
+            _______, KC_ENT,_______
   ),
 
   [_MOUSE] = LAYOUT(
@@ -106,54 +118,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             FUNC   ,_______,_______
   ),
 
+  [_NUMBERS] = LAYOUT(
+    _______, KC_7  , KC_8  , KC_9  ,
+    _______, KC_4  , KC_5  , KC_6  ,
+    KC_0   , KC_1  , KC_2  , KC_3  ,
+            _______,KC_LSFT,_______
+  ),
+
   [_FUNC] = LAYOUT(
-    QK_BOOT,_______,T_DEF  ,T_MOUSE,
-    _______, L     , U     , R     ,
-    _______,_______, D     ,_______,
+    QK_BOOT, T_GAME, T_DEF ,T_MOUSE,
+    NUMBE  , L     , U     , R     ,
+    KC_LALT, KC_TAB, D     ,KC_GRV,
             _______,_______,_______
   ),
 
-  // needs a KC_R, and KC_F
-  //[_GAME] = LAYOUT(
-  //  KC_TAB , KC_1  , KC_2  , KC_3  ,   //    KC_BTN3,_______, KC_F  , JONMAK,
-  //  KC_LSFT, KC_A  , KC_W  , KC_D  ,   //    KC_BTN4,KC_BTN5, KC_R  , SYMBOL,
-  //  KC_LALT, KC_Q  , KC_S  , KC_E  ,   //    KC_BTN1,KC_BTN2,SNIPING,DRGSCRL,
-  //          KC_ESC ,KC_LCTL, KC_SPC    //    SYMBOL ,GJONMAK
-  //),
-
-  //// decide on having KC_ENT or KC_ESC //here
-  //[_JONMAK] = LAYOUT(
-  //  KC_D   , KC_W  , KC_F  , KC_P  ,   //    KC_M  , KC_U  , KC_Y  ,KC_SCLN,
-  //  MT_A   , MT_R  , MT_S  , MT_T  ,   //    KC_N  , KC_E  , KC_I  , KC_O  ,
-  //  KC_G   , KC_X  , KC_C  , KC_V  ,   //    KC_H  , KC_J  , KC_K  , KC_L  ,
-  //          CTL_ENT, MO_TAB, KC_SPC    //    SY_GRV, JM_EXT
-  //),
-
-  //[_JM_EXT] = LAYOUT(
-  //  _______,_______,_______,KC_LCBR,   //    KC_RCBR,_______,_______,_______,
-  //  KC_Z   , KC_Q  , KC_B  ,KC_LBRC,   //    KC_RBRC,KC_COMM, KC_DOT,KC_SLSH,
-  //  _______,_______,KC_BSLS,KC_LPRN,   //    KC_RPRN,_______,_______,_______,
-  //          KC_LCTL,KC_LSFT,KC_SPC     //    SYMBOL ,_______
-  //),
-
-  //[_SYMBOL] = LAYOUT(
-  //  _______, KC_7  , KC_8  , KC_9  ,   //    KC_MINS, PLUS  , STAR  ,KC_SLSH,
-  //  KC_LSFT, KC_4  , KC_5  , KC_6  ,   //    KC_BSPC, KC_DEL,KC_QUOT,KC_DQUO,
-  //  KC_0   , KC_1  , KC_2  , KC_3  ,   //    L      , D     , U     , R     ,
-  //          KC_PEQL, FUNC  , KC_ESC    //    FUNC   ,_______
-  //),
-
-  //[_MOUSE] = LAYOUT(
-  //  _______,_______,_______,G(KC_T),   //    KC_BTN3,_______,_______,_______,
-  //  FUNC   ,_______, WS_L  , WS_R  ,   //    KC_BTN4,KC_BTN5,KC_RCTL,_______,
-  //  KC_LSFT,KC_LCTL,KC_LALT,KC_LGUI,   //    KC_BTN1,KC_BTN2,SNIPING,DRGSCRL,
-  //          _______, FUNC  ,_______    //    FUNC   ,_______
-  //),
-
-  //[_FUNC] = LAYOUT(
-  //  QK_BOOT,KC_VOLU, KC_F5 ,G(KC_L),   //    KC_INS ,KC_PSCR,_______, T_GAME,
-  //  KC_LSFT,KC_MUTE, KC_F11, TERM  ,   //    KC_LGUI,KC_MPRV,KC_MPLY,KC_MNXT,
-  //  KC_LSFT,KC_VOLD,KC_HOME, KC_END,   //    G(L)   , G(D)  , G(U)  , G(R)  ,
-  //          _______,_______,_______    //    _______,_______
-  //)
 };
