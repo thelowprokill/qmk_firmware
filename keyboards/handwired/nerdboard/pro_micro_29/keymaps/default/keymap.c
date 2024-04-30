@@ -154,7 +154,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_FUNC] = LAYOUT(
-    QK_BOOT,KC_VOLU, KC_F5 ,G(KC_L),       KC_INS ,KC_PSCR,_______, T_GAME,
+    QK_BOOT,KC_VOLU, KC_F5 ,G(KC_L),       KC_INS ,KC_PSCR,QK_BOOT, T_GAME,
     KC_LSFT,KC_MUTE, KC_F11, TERM  ,       KC_LGUI,KC_MPRV,KC_MPLY,KC_MNXT,
     KC_LSFT,KC_VOLD,KC_HOME, KC_END,       G(L)   , G(D)  , G(U)  , G(R)  ,
             _______,_______,_______,       _______,_______
