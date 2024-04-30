@@ -29,6 +29,10 @@ enum custom_layers {
 #define STAR    LSFT(KC_8)
 #define WS_L    G(KC_PGUP)
 #define WS_R    G(KC_PGDN)
+#define T_TAB_L LCTL(KC_PGUP)
+#define T_TAB_R LCTL(KC_PGDN)
+#define T_TAB_N LSFT(LCTL(KC_T))
+#define T_TAB_C LSFT(LCTL(KC_W))
 
 // mod taps
 #define CTL_ENT CTL_T(KC_ENT)
@@ -114,7 +118,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   // needs a KC_R, and KC_F
   [_GAME] = LAYOUT(
-    KC_TAB , KC_1  , KC_2  , KC_3  ,       KC_BTN3,_______, KC_F  , JONMAK,
+    KC_TAB , KC_1  , KC_2  , KC_3  ,       KC_BTN3, KC_4  , KC_F  , JONMAK,
     KC_LSFT, KC_A  , KC_W  , KC_D  ,       KC_BTN4,KC_BTN5, KC_R  , SYMBOL,
     KC_LALT, KC_Q  , KC_S  , KC_E  ,       KC_BTN1,KC_BTN2,SNIPING,DRGSCRL,
             KC_ESC ,KC_LCTL, KC_SPC,       SYMBOL ,GJONMAK
@@ -139,12 +143,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, KC_7  , KC_8  , KC_9  ,       KC_MINS, PLUS  , STAR  ,KC_SLSH,
     KC_LSFT, KC_4  , KC_5  , KC_6  ,       KC_BSPC, KC_DEL,KC_QUOT,KC_DQUO,
     KC_0   , KC_1  , KC_2  , KC_3  ,       L      , D     , U     , R     ,
-            KC_PEQL, FUNC  , KC_ESC,       FUNC   ,_______
+            KC_PEQL, FUNC  , KC_ESC,       FUNC   , FUNC
   ),
 
   [_MOUSE] = LAYOUT(
-    _______,_______,_______,G(KC_T),       KC_BTN3,_______,_______,_______,
-    FUNC   ,_______, WS_L  , WS_R  ,       KC_BTN4,KC_BTN5,KC_RCTL,_______,
+    _______,T_TAB_C,T_TAB_N,G(KC_T),       KC_BTN3,_______,_______,_______,
+    T_TAB_L,T_TAB_R, WS_L  , WS_R  ,       KC_BTN4,KC_BTN5,KC_RCTL,_______,
     KC_LSFT,KC_LCTL,KC_LALT,KC_LGUI,       KC_BTN1,KC_BTN2,SNIPING,DRGSCRL,
             _______, FUNC  ,_______,       FUNC   ,_______
   ),
