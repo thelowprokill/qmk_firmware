@@ -24,6 +24,8 @@
 #    include "pro_micro_34.h"
 #elif defined(KEYBOARD_handwired_nerdboard_pro_micro_40)
 #    include "pro_micro_40.h"
+#elif defined(KEYBOARD_handwired_nerdboard_pro_micro_41)
+#    include "pro_micro_41.h"
 #elif defined(KEYBOARD_handwired_nerdboard_pro_micro_46)
 #    include "pro_micro_46.h"
 #endif
