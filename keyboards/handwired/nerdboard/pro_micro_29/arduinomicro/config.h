@@ -27,7 +27,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #undef USE_I2C
 
 #define MASTER_RIGHT
-#define PMW3360_LIFTOFF_DISTANCE 0x40
+//#define PMW3360_LIFTOFF_DISTANCE 0x04
+#define PMW3389_LIFTOFF_DISTANCE     0x00
 
 /* PMW3360 Settings */
 #define POINTING_DEVICE_CS_PIN B6

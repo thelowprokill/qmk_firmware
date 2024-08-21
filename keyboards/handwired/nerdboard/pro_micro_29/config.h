@@ -20,10 +20,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define DIODE_DIRECTION             COL2ROW
 
-#define VERSION 61
+#define VERSION 63
 
 #if VERSION == 61
   // version 6.1
+  #define ROTATIONAL_TRANSFORM_ANGLE  -15
+  #define POINTING_DEVICE_INVERT_Y
+  #define CHARYBDIS_DRAGSCROLL_REVERSE_Y
+#elif VERSION == 63
+  // version 6.3
   #define ROTATIONAL_TRANSFORM_ANGLE  -15
   #define POINTING_DEVICE_INVERT_Y
   #define CHARYBDIS_DRAGSCROLL_REVERSE_Y

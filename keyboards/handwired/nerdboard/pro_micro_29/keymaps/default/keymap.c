@@ -54,6 +54,8 @@ enum custom_layers {
   #ifdef VERSION
     #if VERSION == 61
       char splash_screen[36] = "NerdBoard V6.1 29 Key\n\nBy: Jon Hull";
+    #elif VERSION == 63
+      char splash_screen[36] = "NerdBoard V6.3 29 Key\n\nBy: Jon Hull";
     #else 
       char splash_screen[34] = "NerdBoard V6 29 Key\n\nBy: Jon Hull";
     #endif
