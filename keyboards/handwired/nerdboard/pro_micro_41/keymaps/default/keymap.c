@@ -90,7 +90,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,_______, KC_7  , KC_8  , KC_9  ,KC_LCBR,       KC_RCBR,KC_MINS, PLUS  , STAR  ,KC_SLSH,_______,
     KC_LSFT,_______, KC_4  , KC_5  , KC_6  ,KC_LBRC,       KC_RBRC,KC_BSPC, KC_DEL,KC_QUOT,KC_DQUO,KC_RSFT,
     KC_LALT, KC_0  , KC_1  , KC_2  , KC_3  ,KC_LPRN,       KC_RPRN, L     , D     , U     , R     ,KC_LCTL,
-                            KC_PEQL, FUNC  , KC_ESC,       FUNC   ,FUNC
+                             KC_EQL, FUNC  , KC_ESC,       FUNC   ,FUNC
   ),
   [_MOUSE] = LAYOUT(
     _______,T_TAB_C,T_TAB_N,_______,_______,_______,       _______,KC_BTN3,_______,_______,_______,_______,
