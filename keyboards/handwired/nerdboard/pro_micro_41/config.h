@@ -20,7 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define DIODE_DIRECTION             COL2ROW
 
-#define VERSION 61
+#define VERSION 6
 
 #if VERSION == 61
   // version 6.1
